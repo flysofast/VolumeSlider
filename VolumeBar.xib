@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VolumeBar">
+            <connections>
+                <outlet property="trackBar" destination="P92-wT-sXT" id="TCi-lf-0Pw"/>
+                <outlet property="trackBarHighLight" destination="HT0-sq-sSO" id="MVS-ml-CbA"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="45"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trackBar" translatesAutoresizingMaskIntoConstraints="NO" id="P92-wT-sXT">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="45"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trackBarHighlight" translatesAutoresizingMaskIntoConstraints="NO" id="HT0-sq-sSO">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="45"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="P92-wT-sXT" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="1Yg-5e-zIe"/>
+                <constraint firstItem="HT0-sq-sSO" firstAttribute="width" secondItem="P92-wT-sXT" secondAttribute="width" id="1hU-FN-4Gf"/>
+                <constraint firstItem="P92-wT-sXT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="DDm-Ut-RGd"/>
+                <constraint firstItem="HT0-sq-sSO" firstAttribute="centerY" secondItem="P92-wT-sXT" secondAttribute="centerY" id="J8n-bc-RK3"/>
+                <constraint firstItem="P92-wT-sXT" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="bLf-8s-7JC"/>
+                <constraint firstItem="HT0-sq-sSO" firstAttribute="height" secondItem="P92-wT-sXT" secondAttribute="height" id="jNe-ZH-Yyq"/>
+                <constraint firstItem="HT0-sq-sSO" firstAttribute="centerX" secondItem="P92-wT-sXT" secondAttribute="centerX" id="nNw-Xc-1mH"/>
+                <constraint firstItem="P92-wT-sXT" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="vv6-nR-IlS"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="340" y="-201.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="trackBar" width="366" height="20"/>
+        <image name="trackBarHighlight" width="366" height="20"/>
+    </resources>
+</document>

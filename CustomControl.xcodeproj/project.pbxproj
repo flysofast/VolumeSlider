@@ -13,6 +13,9 @@
 		6D0A78211D3526960003EA8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D0A781F1D3526960003EA8E /* Main.storyboard */; };
 		6D0A78231D3526960003EA8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D0A78221D3526960003EA8E /* Assets.xcassets */; };
 		6D0A78261D3526960003EA8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D0A78241D3526960003EA8E /* LaunchScreen.storyboard */; };
+		6D0A78301D3526AF0003EA8E /* VolumeBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0A782E1D3526AF0003EA8E /* VolumeBar.m */; };
+		6D0A78311D3526AF0003EA8E /* VolumeBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D0A782F1D3526AF0003EA8E /* VolumeBar.xib */; };
+		6D0A78341D3526EE0003EA8E /* CustomXibControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0A78331D3526EE0003EA8E /* CustomXibControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,11 @@
 		6D0A78221D3526960003EA8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6D0A78251D3526960003EA8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6D0A78271D3526960003EA8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D0A782D1D3526AF0003EA8E /* VolumeBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VolumeBar.h; path = ../VolumeBar.h; sourceTree = "<group>"; };
+		6D0A782E1D3526AF0003EA8E /* VolumeBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VolumeBar.m; path = ../VolumeBar.m; sourceTree = "<group>"; };
+		6D0A782F1D3526AF0003EA8E /* VolumeBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VolumeBar.xib; path = ../VolumeBar.xib; sourceTree = "<group>"; };
+		6D0A78321D3526EE0003EA8E /* CustomXibControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomXibControl.h; sourceTree = "<group>"; };
+		6D0A78331D3526EE0003EA8E /* CustomXibControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomXibControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,11 @@
 		6D0A78151D3526960003EA8E /* CustomControl */ = {
 			isa = PBXGroup;
 			children = (
+				6D0A78321D3526EE0003EA8E /* CustomXibControl.h */,
+				6D0A78331D3526EE0003EA8E /* CustomXibControl.m */,
+				6D0A782D1D3526AF0003EA8E /* VolumeBar.h */,
+				6D0A782E1D3526AF0003EA8E /* VolumeBar.m */,
+				6D0A782F1D3526AF0003EA8E /* VolumeBar.xib */,
 				6D0A78191D3526960003EA8E /* AppDelegate.h */,
 				6D0A781A1D3526960003EA8E /* AppDelegate.m */,
 				6D0A781C1D3526960003EA8E /* ViewController.h */,
@@ -139,6 +152,7 @@
 				6D0A78261D3526960003EA8E /* LaunchScreen.storyboard in Resources */,
 				6D0A78231D3526960003EA8E /* Assets.xcassets in Resources */,
 				6D0A78211D3526960003EA8E /* Main.storyboard in Resources */,
+				6D0A78311D3526AF0003EA8E /* VolumeBar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +166,8 @@
 				6D0A781E1D3526960003EA8E /* ViewController.m in Sources */,
 				6D0A781B1D3526960003EA8E /* AppDelegate.m in Sources */,
 				6D0A78181D3526960003EA8E /* main.m in Sources */,
+				6D0A78341D3526EE0003EA8E /* CustomXibControl.m in Sources */,
+				6D0A78301D3526AF0003EA8E /* VolumeBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
