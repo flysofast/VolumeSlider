@@ -27,8 +27,7 @@ IB_DESIGNABLE
 @property(weak, nonatomic) IBOutlet UIImageView *trackBar;
 @property(weak, nonatomic) IBOutlet UIImageView *trackBarHighLight;
 
-- (void)updateTrackHighlight:(float)value forceShow:(BOOL)force;
+- (void)updateTrackHighlight:(float)value forcedShow:(BOOL)forced;
 
-@property(assign, nonatomic)  BOOL isActive;
 
 @end

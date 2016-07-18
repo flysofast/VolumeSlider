@@ -19,6 +19,20 @@
 }
 @end
 @implementation VolumeBar
+
+//Override the parent's
+- (void)loadConfig {
+  [super loadConfig];
+
+  timestamp = CFAbsoluteTimeGetCurrent();
+
+  UIPanGestureRecognizer *panRecognizer =
+  [[UIPanGestureRecognizer alloc] initWithTarget:self
+                                          action:@selector(handlePan:)];
+  [self addGestureRecognizer:panRecognizer];
+  isInitiated = NO;
+}
+
 - (void)drawRect:(CGRect)rect {
 
   //Prevent doing this twice
@@ -27,7 +41,6 @@
   }
 
   self.value=1;
-  self.isActive=YES;
   float thumbHeight = 30;
 
 
@@ -59,6 +72,7 @@
 
   isInitiated = YES;
 
+  //Set thumb mark at mark 1 as initial position
   [btStop1 sendActionsForControlEvents:UIControlEventTouchUpInside];
 }
 
@@ -73,7 +87,7 @@
 
   [button setImage:image1 forState:UIControlStateNormal];
 
-
+  //Set inset to make a bigger button (for ease of being tapped), but remain the visible size
   int inset = 15;
   [button setContentEdgeInsets:UIEdgeInsetsMake(inset, inset, inset, inset)];
 
@@ -82,6 +96,7 @@
   button.frame = CGRectMake(0, 0, image1.size.width * ratio + inset * 2,
                             image1.size.height * ratio + inset * 2);
 
+  //Set respective position by stop value
   [button setCenter:CGPointMake(stop * self.trackBar.bounds.size.width,
                                 self.trackBar.center.y)];
 
@@ -90,16 +105,7 @@
   return button;
 }
 
-- (void)loadConfig {
-  [super loadConfig];
-  timestamp = CFAbsoluteTimeGetCurrent();
 
-  UIPanGestureRecognizer *panRecognizer =
-      [[UIPanGestureRecognizer alloc] initWithTarget:self
-                                              action:@selector(handlePan:)];
-  [self addGestureRecognizer:panRecognizer];
-  isInitiated = NO;
-}
 
 #pragma mark - Mark click
 - (void)markClicked:(id)sender {
@@ -122,40 +128,37 @@
 
   thumb.center = CGPointMake(xValue, thumb.center.y);
 
-
   [self updateValue];
 
   [recognizer setTranslation:CGPointMake(0, 0) inView:self];
 }
 
+//Update the slider value and invoke the value changed event
 - (void)updateValue {
   self.value = (thumb.center.x / self.bounds.size.width ) * self.maxValue;
   [self sendActionsForControlEvents:UIControlEventValueChanged];
 }
 
-- (void)updateTrackHighlight:(float)value forceShow:(BOOL)force {
+//Update the highlight part of the trackbar
+- (void)updateTrackHighlight:(float)value forcedShow:(BOOL)forced {
 
-  if (!_isActive) {
-    return;
-  }
-  
+
+  //Prevent update multiple times in a short interval of 0.1 second, only if it is forced to update
   double ts = CFAbsoluteTimeGetCurrent();
-  //  double aa=CFAbsoluteTimeGetCurrent()-timestamp;
-  //
-  //  NSLog(@"%f",value);
-  if (force || CFAbsoluteTimeGetCurrent() - timestamp > 0.1) {
+
+  if (forced || CFAbsoluteTimeGetCurrent() - timestamp > 0.1) {
     timestamp = ts;
   } else {
     return;
   }
 
-  value = value / _maxValue;
+  float portion = value / _maxValue;
 
   // Create a mask layer and the frame to determine what will be visible in the
   // view.
   CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
 
-  CGFloat thumbMidXInHighlightTrack = self.trackBar.frame.size.width * value;
+  CGFloat thumbMidXInHighlightTrack = self.trackBar.frame.size.width * portion;
   CGRect maskRect = CGRectMake(0, 0, thumbMidXInHighlightTrack,
                                self.trackBar.frame.size.height);
 

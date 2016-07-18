@@ -19,7 +19,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ki-bF-DrO" customClass="VolumeBar">
                                 <rect key="frame" x="0.0" y="290" width="600" height="20.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="stop1">
                                         <real key="value" value="0.0"/>
@@ -42,13 +42,16 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="4ki-bF-DrO" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="2Ke-y6-ble"/>
                             <constraint firstItem="4ki-bF-DrO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="SY7-OV-Fnj"/>
                             <constraint firstItem="4ki-bF-DrO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XHM-NZ-EZh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="volumeBar" destination="4ki-bF-DrO" id="w9e-dm-Hi8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

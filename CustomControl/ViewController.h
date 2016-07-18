@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "VolumeBar.h"
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet VolumeBar *volumeBar;
 
 @end
 
