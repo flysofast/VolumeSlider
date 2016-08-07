@@ -29,6 +29,9 @@
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
 }
+- (IBAction)valueChanged:(id)sender {
+  NSLog(@"Control value: %f",_volumeBar.value);
+}
 
 -(void)prepareForAudioRecording{
   //
@@ -113,7 +116,7 @@ withNumberOfChannels:(UInt32)numberOfChannels {
 
   }
 
-  [self.volumeBar updateTrackHighlight:fabs(buf) forcedShow:YES];
+  [self.volumeBar updateTrackHighlight:fabs(buf) forcedShow:NO];
 }
 
 @end
